@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class FirstProject {
 
-    public void main(String[] args) {
+    //Adding a scanner called input into the project
+    Scanner input = new Scanner(System.in);
 
-        //Adding a scanner called input into the project
-        Scanner input = new Scanner(System.in);
+    public void main(String[] args) {
         System.out.println("Start Menu");
         System.out.println("1. Data Converter");
         System.out.println("2. Grade Calculator");
@@ -57,6 +57,49 @@ public class FirstProject {
     }
 
     public void gradeCalculator() {
+        System.out.println("Enter your grade:");
+        double grade = input.nextDouble();
+
+        if (grade < 49 && grade >= 0) {
+            System.out.println("You got an F, you failed.");
+        }
+
+        if (grade >= 50 && grade <= 59) {
+            System.out.println("You got a C-, you have passed!");
+        }
+
+        if (grade >= 60 && grade <= 66) {
+            System.out.println("You got a C, you have passed!");
+        }
+
+        if (grade >= 67 && grade <= 72) {
+            System.out.println("You got a C+, you have passed!");
+        }
+
+        if (grade >=73 && grade <= 85) {
+            System.out.println("You got a B, you have passed!");
+        }
+
+        if (grade >= 86 && grade <= 99) {
+            System.out.println("You got an A, you have passed!");
+        }
+
+        if (grade == 100) {
+            System.out.println("You got a perfect score, you have gotten an A and passed!");
+        }
+
+        if (grade > 100) {
+            System.out.println("You have gotten above 100 percent! That's an incredible feat!");
+        }
+
+        if (grade < 0) {
+            System.out.println("You... managed to get a grade below 0? As impressive as that is, you have unfortunately failed");
+        }
+
+        else {
+            System.out.println("Invalid prompt, exiting..");
+            System.exit(0);
+        }
 
     }
 
