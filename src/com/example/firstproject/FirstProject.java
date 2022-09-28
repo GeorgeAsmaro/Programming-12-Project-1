@@ -125,6 +125,42 @@ public class FirstProject {
 
     public static void taxCalculator() {
 
+        System.out.println("Enter 1 to calculate tax. Enter 2 to see how many of an item you can buy.");
+        int num2 = input.nextInt();
+
+        switch(num2) {
+            case 1: {
+                System.out.println("Enter the price of the item.");
+
+                double itemCost = input.nextDouble();
+
+                double afterTax = itemCost * 1.12;
+
+                System.out.println("The cost of your item after tax is: $" + afterTax);
+            }
+
+            case 2:   {
+                System.out.println("Enter how much money you have.");
+                double money = input.nextDouble();
+
+                System.out.println("Enter how much the cost of your item costs");
+                double itemCost = input.nextDouble();
+
+                double numberBuyable = (money/itemCost);
+
+                System.out.println("You are able to buy: " + (int)(numberBuyable) + " of that item.");
+            }
+
+            default: {
+
+                if (num2 >= 3 || num2 <= 0) {
+                    System.out.println("Invalid input.");
+                    System.exit(0);
+                }
+            }
+
+        }
+
     }
 
     public static void arrayOrLists() {
