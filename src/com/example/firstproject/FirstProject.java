@@ -101,8 +101,24 @@ public class FirstProject {
     }
 
     public static void forLoop() {
+        System.out.println("Choose a starting number.");
+        int start = input.nextInt();
 
-    }
+        System.out.println("Choose an ending number.");
+        int end = input.nextInt();
+
+        System.out.println("Choose a gap.");
+        int gap = input.nextInt();
+
+        for(int i = start; i <= end; i += gap) {
+            System.out.println(i);
+            if (i >= end) {
+
+                i = end;
+                System.out.println("Finished.");
+            }
+        }
+        }
 
     public static void whileLoop() {
         Random rand = new Random();
@@ -146,7 +162,7 @@ public class FirstProject {
                 System.out.println("Enter how much the cost of your item costs");
                 double itemCost = input.nextDouble();
 
-                double numberBuyable = (money/itemCost);
+                double numberBuyable = (money / itemCost);
 
                 System.out.println("You are able to buy: " + (int)(numberBuyable) + " of that item.");
             }
