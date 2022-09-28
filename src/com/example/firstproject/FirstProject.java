@@ -1,13 +1,14 @@
 package com.example.firstproject;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class FirstProject {
 
     //Adding a scanner called input into the project
-    Scanner input = new Scanner(System.in);
+    static Scanner input = new Scanner(System.in);
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("Start Menu");
         System.out.println("1. Data Converter");
         System.out.println("2. Grade Calculator");
@@ -18,45 +19,41 @@ public class FirstProject {
         System.out.println("7. Exit");
         int num = input.nextInt();
 
-        switch(num) {
-            case 1:
+        switch (num) {
+            case 1 -> {
                 System.out.println("Data Converter Started!");
                 dataConverter();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 System.out.println("Grade Calculator Started!");
                 gradeCalculator();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 System.out.println("For Loop Started!");
                 forLoop();
-                break;
-            case 4:
+            }
+            case 4 -> {
                 System.out.println("While Loop Started!");
                 whileLoop();
-                break;
-            case 5:
+            }
+            case 5 -> {
                 System.out.println("Tax Calculator Started!");
                 taxCalculator();
-                break;
-            case 6:
+            }
+            case 6 -> {
                 System.out.println("Arrays/Lists Started!");
                 arrayOrLists();
-                break;
-            case 7:
-                System.exit(0);
-                break;
-            default:
-                System.out.println("You entered an invalid input!");
-                break;
+            }
+            case 7 -> System.exit(0);
+            default -> System.out.println("You entered an invalid input!");
         }
     }
 
-    public void dataConverter() {
+    public static void dataConverter() {
 
     }
 
-    public void gradeCalculator() {
+    public static void gradeCalculator() {
         System.out.println("Enter your grade:");
         double grade = input.nextDouble();
 
@@ -64,35 +61,35 @@ public class FirstProject {
             System.out.println("You got an F, you failed.");
         }
 
-        if (grade >= 50 && grade <= 59) {
+         else if (grade >= 50 && grade <= 59) {
             System.out.println("You got a C-, you have passed!");
         }
 
-        if (grade >= 60 && grade <= 66) {
+        else if (grade >= 60 && grade <= 66) {
             System.out.println("You got a C, you have passed!");
         }
 
-        if (grade >= 67 && grade <= 72) {
+        else if (grade >= 67 && grade <= 72) {
             System.out.println("You got a C+, you have passed!");
         }
 
-        if (grade >=73 && grade <= 85) {
+        else if (grade >=73 && grade <= 85) {
             System.out.println("You got a B, you have passed!");
         }
 
-        if (grade >= 86 && grade <= 99) {
+        else if (grade >= 86 && grade <= 99) {
             System.out.println("You got an A, you have passed!");
         }
 
-        if (grade == 100) {
+        else if (grade == 100) {
             System.out.println("You got a perfect score, you have gotten an A and passed!");
         }
 
-        if (grade > 100) {
+        else if (grade > 100) {
             System.out.println("You have gotten above 100 percent! That's an incredible feat!");
         }
 
-        if (grade < 0) {
+        else if (grade < 0) {
             System.out.println("You... managed to get a grade below 0? As impressive as that is, you have unfortunately failed");
         }
 
@@ -103,19 +100,34 @@ public class FirstProject {
 
     }
 
-    public void forLoop() {
+    public static void forLoop() {
 
     }
 
-    public void whileLoop() {
+    public static void whileLoop() {
+        Random rand = new Random();
+
+        int realNum = rand.nextInt(10);
+
+        int guessedNum = 11;
+
+        System.out.println("Guess the number! Find the number between 0-9");
+
+        while(guessedNum != realNum) {
+            guessedNum = input.nextInt();
+
+            if (guessedNum == realNum) {
+                System.out.println("You have guessed the correct number! The number was: " + realNum);
+                break;
+            }
+        }
+    }
+
+    public static void taxCalculator() {
 
     }
 
-    public void taxCalculator() {
-
-    }
-
-    public void arrayOrLists() {
+    public static void arrayOrLists() {
 
     }
 }
