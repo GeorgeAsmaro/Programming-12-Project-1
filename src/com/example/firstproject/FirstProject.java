@@ -59,8 +59,11 @@ public class FirstProject {
                 arrayOrLists();
             }
 
-            //If the user chooses "7", exit
-            case "7" -> System.exit(0);
+            //If the user chooses "7", print a message and exit
+            case "7" -> {
+                System.out.println("Exiting...");
+                System.exit(0);
+            }
 
             //Putting a message for a failed output
             default -> System.out.println("You entered an invalid input!");
@@ -75,7 +78,6 @@ public class FirstProject {
         System.out.println("Enter your grade:");
 
         //Making the grade a double in order to have decimals in the percentages
-
         double grade = input.nextDouble();
 
         //If statement for a failing grade
@@ -192,6 +194,7 @@ public class FirstProject {
 
     public static void taxCalculator() {
 
+        //Give the user the choice of which type of calculator they want to do
         System.out.println("Enter 1 to calculate tax. Enter 2 to see how many of an item you can buy.");
         int num2 = input.nextInt();
 
@@ -200,27 +203,36 @@ public class FirstProject {
             case 1: {
                 System.out.println("Enter the price of the item.");
 
+                //Get the price of the item from the user
                 double itemCost = input.nextDouble();
 
+                //Multiply the price of the item by the tax rate in British Columbia, which is currently 12%
                 double afterTax = itemCost * 1.12;
 
+                //Print out the price of the item after tax
                 System.out.println("The cost of your item after tax is: $" + afterTax);
             }
 
             case 2:   {
+
+                //Get the amount of money that the user has
                 System.out.println("Enter how much money you have.");
                 double money = input.nextDouble();
 
+                //Get the cost of the item the user has
                 System.out.println("Enter the cost of your item.");
                 double itemCost = input.nextDouble();
 
+                //Divide the amount of money by the cost of the item to get the double of how many of that item you can get
                 double numberBuyable = (money / itemCost);
 
+                //Print the int of how many of that item you can have, because you can't have a piece of an item and only a whole item
                 System.out.println("You are able to buy: " + (int)(numberBuyable) + " of that item.");
             }
 
             default: {
 
+                //If the number is greater than or equal to 3 OR the number is less than or equal to 0, print that the input was invalid and exit
                 if (num2 >= 3 || num2 <= 0) {
                     System.out.println("Invalid input.");
                     System.exit(0);
