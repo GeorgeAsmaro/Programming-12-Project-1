@@ -184,7 +184,7 @@ public class FirstProject {
         //Generating a number from 0-9
         int realNum = rand.nextInt(10);
 
-        //Making the number outside those bounds by default so it doesn't solve without the user typing anything
+        //Making the number outside those bounds by default, so it doesn't solve without the user typing anything
         int guessedNum = 11;
 
         System.out.println("Guess the number! Find the number between 0-9");
