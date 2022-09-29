@@ -71,7 +71,30 @@ public class FirstProject {
     }
 
     public static void dataConverter() {
+        System.out.println("Press 1 to convert a string to int, 2 to convert an int to double, 3 to convert an int to a float, 4 to convert a double to an int");
+        String num = input.nextLine();
+        switch(num) {
+            case "1" -> {
+                //If the user chooses "1", information is needed for the string to turn into an int
 
+            }
+            case "2" -> {
+                //If the user chooses "2", information is needed for the int to turn into a double
+
+            }
+            case "3" -> {
+                //If the user chooses "3", information is needed for the int to turn into a float
+
+            }
+            case "4" -> {
+                //If the user chooses "4", information is needed for the double to turn into an int
+
+            }
+
+            default -> {
+
+            }
+        }
     }
 
     public static void gradeCalculator() {
