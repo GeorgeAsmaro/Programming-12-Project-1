@@ -288,16 +288,20 @@ public class FirstProject {
             System.out.println(nums[i]);
         }
 
+        //Initialize variables for the number of indices the array will have as well as the total of those elements in the indices combined
         int numOfValues = nums.length;
         int totalOfValues = 0;
         double average;
 
+        //For statement where the total is equal to all the contents of the elements in the array added up
         for(int i = 0; i < nums.length; i++) {
             totalOfValues = nums[i] + totalOfValues;
         }
 
+        //Double that creates the average of the array
         double arrayAverage = totalOfValues / numOfValues;
 
+        //Prints out the average of the array, the lowest value, and the highest value. This was easy since I was able to sort them
         System.out.println("The average of the array is: " + arrayAverage);
         System.out.println("The lowest value in the array is: " + nums[0]);
         System.out.println("The highest value in the array is: " + nums[nums.length-1]);
