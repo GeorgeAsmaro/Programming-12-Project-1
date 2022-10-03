@@ -85,19 +85,31 @@ public class FirstProject {
         switch(num) {
             case "1" -> {
                 //If the user chooses "1", information is needed for the string to turn into an int
-
+                System.out.println("Enter the string you would like to convert to an integer: ");
+                String changeToInt = input.nextLine();
+                System.out.println("The string changed to an integer is: " + Integer.valueOf(changeToInt));
             }
             case "2" -> {
                 //If the user chooses "2", information is needed for the int to turn into a double
-
+                System.out.println("Enter the int you would like to convert to a double: ");
+                int changeToDouble = input.nextInt();
+                System.out.println("The integer changed to a double is: " + (double)changeToDouble);
             }
             case "3" -> {
                 //If the user chooses "3", information is needed for the int to turn into a float
+                System.out.println("Enter the int you would like to convert to a float: ");
+                int changeToFloat = input.nextInt();
+                System.out.println("The integer changed to a float is: " + (float)changeToFloat);
 
             }
             case "4" -> {
                 //If the user chooses "4", information is needed for the double to turn into an int
+                System.out.println("Enter the double you would like to convert to an integer (rounded): ");
+                double roundToInt = input.nextDouble();
 
+                //Adds 0.5 to the double because an integer always rounds down, so if the decimal is .5 or higher, it will round to the integer above, if not, it will stay the original integer rounding down
+                roundToInt += 0.5;
+                System.out.println("The double rounded to an integer is: " + (int)roundToInt);
             }
 
             default -> {
