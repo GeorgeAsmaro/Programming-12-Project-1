@@ -1,7 +1,9 @@
 package com.example.firstproject;
 
-//Importing the scanner into the class
+//Importing arrays into the class
 import java.util.Arrays;
+
+//Importing the scanner into the class
 import java.util.Scanner;
 
 //Importing the random number generator into the class
