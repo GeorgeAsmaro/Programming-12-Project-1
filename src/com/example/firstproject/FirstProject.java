@@ -22,7 +22,8 @@ public class FirstProject {
         System.out.println("4. While Loop");
         System.out.println("5. Tax calculator");
         System.out.println("6. Arrays/Lists");
-        System.out.println("7. Exit");
+        System.out.println("7. Person Class");
+        System.out.println("8. Exit");
 
         //Asking for an input from the user, in this case as a String
         String num = input.nextLine();
@@ -60,8 +61,15 @@ public class FirstProject {
                 arrayOrLists();
             }
 
-            //If the user chooses "7", print a message and exit
             case "7" -> {
+                //If the user chooses "7", start the person class method
+                System.out.println("Person Class Started!");
+                personClass();
+
+            }
+
+            //If the user chooses "8", print a message and exit
+            case "8" -> {
                 System.out.println("Exiting...");
                 System.exit(0);
             }
@@ -305,5 +313,31 @@ public class FirstProject {
         System.out.println("The average of the array is: " + arrayAverage);
         System.out.println("The lowest value in the array is: " + nums[0]);
         System.out.println("The highest value in the array is: " + nums[nums.length-1]);
+    }
+
+    public static void personClass() {;
+
+        System.out.println("Enter the person's first and last name: ");
+        String name = input.nextLine();
+
+        System.out.println("Enter the person's favourite quote: ");
+        String favQuote = input.nextLine();
+
+        System.out.println("Enter the person's age: ");
+        int age = input.nextInt();
+
+        Person person = new Person(age,name,favQuote);
+        person.getAll();
+
+        System.out.println("If you would like to change or get something, input 1, if you are finished with the person class, input 2");
+        int changeOrSet = input.nextInt();
+
+        if(changeOrSet == 1) {
+            
+        }
+        else if(changeOrSet == 2) {
+            System.out.println("No changes made, final person: ");
+            person.getAll();
+        }
     }
 }
