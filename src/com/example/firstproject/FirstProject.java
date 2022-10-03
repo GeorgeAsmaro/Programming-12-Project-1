@@ -1,6 +1,7 @@
 package com.example.firstproject;
 
 //Importing the scanner into the class
+import java.util.Arrays;
 import java.util.Scanner;
 
 //Importing the random number generator into the class
@@ -268,5 +269,37 @@ public class FirstProject {
 
     public static void arrayOrLists() {
 
+        System.out.println("Enter how many integers you want the array to have");
+
+        //Asking the user for how many integers they want the array to have
+        int maxNum = input.nextInt();
+
+        //Creating the array using the integer given before
+        int[] nums = new int[maxNum];
+
+        //For i is equal to zero and i is less than the max number of the array, add i by one and for each integer in the array, get the user to assign a value to it
+        for(int i = 0; i < maxNum; i++) {
+            nums[i] = input.nextInt();
+        }
+
+        //For each part of the array, get them all, sort them, then print them sorted (Looked online for the sorting function)
+        for(int i = 0; i < maxNum; i++) {
+            Arrays.sort(nums);
+            System.out.println(nums[i]);
+        }
+
+        int numOfValues = nums.length;
+        int totalOfValues = 0;
+        double average;
+
+        for(int i = 0; i < nums.length; i++) {
+            totalOfValues = nums[i] + totalOfValues;
+        }
+
+        double arrayAverage = totalOfValues / numOfValues;
+
+        System.out.println("The average of the array is: " + arrayAverage);
+        System.out.println("The lowest value in the array is: " + nums[0]);
+        System.out.println("The highest value in the array is: " + nums[nums.length-1]);
     }
 }
