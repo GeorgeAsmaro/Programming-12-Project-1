@@ -230,11 +230,15 @@ public class FirstProject {
                 }
             }
 
-            //If the guessed number is equal to the generated number, print a message and break out of the while loop;
+            //If the guessed number is equal to the generated number, break out of the while loop;
             if (guessedNum == realNum) {
-                System.out.println("You have guessed the correct number! The number was: " + realNum);
                 break;
             }
+        }
+
+        //If the guessed number is equal to the generated number, print a message saying the guessed number was correct
+        if (guessedNum == realNum) {
+            System.out.println("You have guessed the correct number! The number was: " + realNum);
         }
     }
 
