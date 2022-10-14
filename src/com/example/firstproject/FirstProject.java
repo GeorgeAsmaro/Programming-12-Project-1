@@ -32,38 +32,38 @@ public class FirstProject {
 
         //Choosing the method to go to based on the string given
         switch (num) {
-            case "1" -> {
+            case "1": {
                 //If the user chooses "1", start the data converter method
                 System.out.println("Data Converter Started!");
                 dataConverter();
             }
-            case "2" -> {
+            case "2": {
                 //If the user chooses "2", start the grade calculator method
                 System.out.println("Grade Calculator Started!");
                 gradeCalculator();
             }
-            case "3" -> {
+            case "3": {
                 //If the user chooses "3", start the for loop method
                 System.out.println("For Loop Started!");
                 forLoop();
             }
-            case "4" -> {
+            case "4": {
                 //If the user chooses "4", start the while loop method
                 System.out.println("While Loop Started!");
                 whileLoop();
             }
-            case "5" -> {
+            case "5": {
                 //If the user chooses "5", start the tax calculator method
                 System.out.println("Tax Calculator Started!");
                 taxCalculator();
             }
-            case "6" -> {
+            case "6": {
                 //If the user chooses "6", start the arrays/lists method
                 System.out.println("Arrays/Lists Started!");
                 arrayOrLists();
             }
 
-            case "7" -> {
+            case "7": {
                 //If the user chooses "7", start the person class method
                 System.out.println("Person Class Started!");
                 personClass();
@@ -71,13 +71,13 @@ public class FirstProject {
             }
 
             //If the user chooses "8", print a message and exit
-            case "8" -> {
+            case "8": {
                 System.out.println("Exiting...");
                 System.exit(0);
             }
 
             //Putting a message for a failed output
-            default -> System.out.println("You entered an invalid input!");
+            default: System.out.println("You entered an invalid input!");
         }
     }
 
@@ -333,85 +333,97 @@ public class FirstProject {
         System.out.println("The highest value in the array is: " + nums[nums.length-1]);
     }
 
-    public static void personClass() {;
+    public static void personClass() {
+        ;
+
+        boolean finished = false;
 
         //Getting the name of the person
         System.out.println("Enter the person's first and last name: ");
-        String name = input.nextLine();
+        String name = input.next();
 
         //Getting the favourite quote of the person
         System.out.println("Enter the person's favourite quote: ");
-        String favQuote = input.nextLine();
+        String favQuote = input.next();
 
         //Getting the age of the person
         System.out.println("Enter the person's age: ");
         int age = input.nextInt();
 
         //Adding the person object into the class and returning the information back
-        Person person = new Person(age,name,favQuote);
+        Person person = new Person(age, name, favQuote);
         person.getAll();
 
-        //Ask the user if they want to change or get any info
-        System.out.println("If you would like to change or get something, input 1, if you are finished with the person class, input 2");
-        int changeOrSet = input.nextInt();
+        while (!finished) {
+            //Ask the user if they want to change or get any info
+            System.out.println("If you would like to change or get something, input 1, if you are finished with the person class, input 2");
+            int changeOrSet = input.nextInt();
 
-        //If the user presses 1, they would like to get or change info
-        if(changeOrSet == 1) {
+            //If the user presses 1, they would like to get or change info
+            if (changeOrSet == 1) {
 
-            //Asking the user if they want to either get or set something
-            System.out.println("Enter 1 if you would like to get something, enter 2 if you would like to set something");
-            int getOrSet = input.nextInt();
+                //Asking the user if they want to either get or set something
+                System.out.println("Enter 1 if you would like to get something, enter 2 if you would like to set something");
+                int getOrSet = input.nextInt();
 
-            //If they choose 1, they want to get something, therefore I am asking which part they want to get
-            if (getOrSet == 1) {
-                System.out.println("If you would like to get age, enter 1. If you would like to get the name, enter 2, if you would like to get the quote, enter 3");
-                int ageNameOrQuote = input.nextInt();
+                //If they choose 1, they want to get something, therefore I am asking which part they want to get
+                if (getOrSet == 1) {
+                    System.out.println("If you would like to get age, enter 1. If you would like to get the name, enter 2, if you would like to get the quote, enter 3, and if you would like to get all of these, enter 4");
+                    int ageNameOrQuote = input.nextInt();
 
-                //If they choose 1, get the person's age
-                if(ageNameOrQuote == 1) {
-                    person.getAge();
+                    //If they choose 1, get the person's age
+                    if (ageNameOrQuote == 1) {
+                        person.getAge();
+                    }
+
+                    //Otherwise if they choose 2, get the person's name
+                    else if (ageNameOrQuote == 2) {
+                        person.getName();
+                    }
+
+                    //Otherwise if they choose 3, get the person's favourite quote
+                    else if (ageNameOrQuote == 3) {
+                        person.getFavQuote();
+                    }
+
+                    //Otherwise if they chose 4, get all information
+                    else if(ageNameOrQuote == 4) {
+                        person.getAll();
+                    }
                 }
 
-                //Otherwise if they choose 2, get the person's name
-                else if(ageNameOrQuote == 2) {
-                    person.getName();
-                }
+                //If they choose 2, ask them what they want to set
+                if (getOrSet == 2) {
+                    System.out.println("If you would like to set age, enter 1. If you would like to set the name, enter 2, if you would like to set the quote, enter 3");
+                    int setAgeNameQuote = input.nextInt();
 
-                //Otherwise if they choose 3, get the person's favourite quote
-                else if(ageNameOrQuote == 3) {
-                    person.getFavQuote();
+                    //If they choose 1, ask them to set the person's age
+                    if (setAgeNameQuote == 1) {
+                        person.setAge();
+                        person.getAll();
+                    }
+
+                    //If they choose 2, ask them to set the person's name
+                    else if (setAgeNameQuote == 2) {
+                        person.setName();
+                        person.getAll();
+                    }
+
+                    //If they choose 3, ask them to set the person's favourite quote
+                    else if (setAgeNameQuote == 3) {
+                        person.setFavQuote();
+                        person.getAll();
+                    }
                 }
             }
 
-            //If they choose 2, ask them what they want to set
-            if (getOrSet == 2) {
-                System.out.println("If you would like to set age, enter 1. If you would like to set the name, enter 2, if you would like to set the quote, enter 3");
-                int setAgeNameQuote = input.nextInt();
 
-                //If they choose 1, ask them to set the person's age
-                if(setAgeNameQuote == 1) {
-                    person.setAge();
-                    person.getAll();
-                }
-
-                //If they choose 2, ask them to set the person's name
-                else if(setAgeNameQuote == 2) {
-                    person.setName();
-                    person.getAll();
-                }
-
-                //If they choose 3, ask them to set the person's favourite quote
-                else if(setAgeNameQuote == 3) {
-                    person.setFavQuote();
-                    person.getAll();
-                }
+            //Otherwise, if they choose 2, tell them that no changes were made and print out all the information given
+            else if (changeOrSet == 2) {
+                System.out.println("No changes made, final person: ");
+                person.getAll();
+                finished = true;
             }
-        }
-
-        //Otherwise, if they choose 2, tell them that no changes were made and print out all the information given
-        else if(changeOrSet == 2) {
-            System.out.println("No changes made, final person: ");
-            person.getAll();
         }
     }
 }
