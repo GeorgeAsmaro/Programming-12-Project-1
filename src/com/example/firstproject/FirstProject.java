@@ -82,6 +82,7 @@ public class FirstProject {
     }
 
     public static void dataConverter() {
+
         System.out.println("Press 1 to convert a string to int, 2 to convert an int to double, 3 to convert an int to a float, 4 to convert a double to an int");
         String num = input.nextLine();
         switch(num) {
@@ -121,216 +122,274 @@ public class FirstProject {
     }
 
     public static void gradeCalculator() {
-        System.out.println("Enter your grade:");
 
-        //Making the grade a double in order to have decimals in the percentages
-        double grade = input.nextDouble();
+        boolean finished = false;
 
-        //If statement for a failing grade
-        if (grade < 49 && grade >= 0) {
-            System.out.println("You got an F, you failed.");
+        while(!finished) {
+            System.out.println("Enter your grade:");
+
+            //Making the grade a double in order to have decimals in the percentages
+            double grade = input.nextDouble();
+
+            //If statement for a failing grade
+            if (grade < 49 && grade >= 0) {
+                System.out.println("You got an F, you failed.");
+            }
+
+            //If statement for a C-. Using < and not <= to let decimals be accepted.
+            else if (grade >= 50 && grade < 60) {
+                System.out.println("You got a C-, you have passed!");
+            }
+
+            //If statement for a C. Using < and not <= to let decimals be accepted.
+            else if (grade >= 60 && grade < 67) {
+                System.out.println("You got a C, you have passed!");
+            }
+
+            //If statement for a C+. Using < and not <= to let decimals be accepted.
+            else if (grade >= 67 && grade < 73) {
+                System.out.println("You got a C+, you have passed!");
+            }
+
+            //If statement for a B. Using < and not <= to let decimals be accepted.
+            else if (grade >=73 && grade < 86) {
+                System.out.println("You got a B, you have passed!");
+            }
+
+            //If statement for an A. Using < and not <= to let decimals be accepted.
+            else if (grade >= 86 && grade < 100) {
+                System.out.println("You got an A, you have passed!");
+            }
+
+            //If statement for a perfect score. The number can only be 100 and nothing else.
+            else if (grade == 100) {
+                System.out.println("You got a perfect score, you have gotten an A and passed!");
+            }
+
+            //If statement for a grade above perfect. The number has to be above 100.
+            else if (grade > 100) {
+                System.out.println("You have gotten above 100 percent! That's an incredible feat!");
+            }
+
+            //If statement for a grade less than 0. The number has to be less than 0.
+            else if (grade < 0) {
+                System.out.println("You... managed to get a grade below 0? As impressive as that is, you have unfortunately failed");
+            }
+
+            //Otherwise, the output given by the user was invalid, and therefore the code is forced to exit
+            else {
+                System.out.println("Invalid prompt, exiting..");
+                System.exit(0);
+            }
+
+            System.out.println("Enter 1 if you are finished, enter 2 restart the whileLoop");
+            int restart = input.nextInt();
+            if(restart == 1) {
+                finished = true;
+            }
         }
 
-        //If statement for a C-. Using < and not <= to let decimals be accepted.
-         else if (grade >= 50 && grade < 60) {
-            System.out.println("You got a C-, you have passed!");
-        }
-
-         //If statement for a C. Using < and not <= to let decimals be accepted.
-        else if (grade >= 60 && grade < 67) {
-            System.out.println("You got a C, you have passed!");
-        }
-
-        //If statement for a C+. Using < and not <= to let decimals be accepted.
-        else if (grade >= 67 && grade < 73) {
-            System.out.println("You got a C+, you have passed!");
-        }
-
-        //If statement for a B. Using < and not <= to let decimals be accepted.
-        else if (grade >=73 && grade < 86) {
-            System.out.println("You got a B, you have passed!");
-        }
-
-        //If statement for an A. Using < and not <= to let decimals be accepted.
-        else if (grade >= 86 && grade < 100) {
-            System.out.println("You got an A, you have passed!");
-        }
-
-        //If statement for a perfect score. The number can only be 100 and nothing else.
-        else if (grade == 100) {
-            System.out.println("You got a perfect score, you have gotten an A and passed!");
-        }
-
-        //If statement for a grade above perfect. The number has to be above 100.
-        else if (grade > 100) {
-            System.out.println("You have gotten above 100 percent! That's an incredible feat!");
-        }
-
-        //If statement for a grade less than 0. The number has to be less than 0.
-        else if (grade < 0) {
-            System.out.println("You... managed to get a grade below 0? As impressive as that is, you have unfortunately failed");
-        }
-
-        //Otherwise, the output given by the user was invalid, and therefore the code is forced to exit
-        else {
-            System.out.println("Invalid prompt, exiting..");
-            System.exit(0);
-        }
 
     }
 
     public static void forLoop() {
 
-        //Getting information for the starting number
-        System.out.println("Choose a starting number.");
-        int start = input.nextInt();
+        boolean finished = false;
 
-        //Getting information for the ending number
-        System.out.println("Choose an ending number.");
-        int end = input.nextInt();
+        while(!finished) {
 
-        //Getting information for the gap between the starting and ending number
-        System.out.println("Choose a gap.");
-        int gap = input.nextInt();
+            //Getting information for the starting number
+            System.out.println("Choose a starting number.");
+            int start = input.nextInt();
 
-        //For every time that start is less than end, add the gap to start and print it out until the starting number is greater than or equal to the ending number
-        for(int i = start; i <= end; i += gap) {
-            System.out.println(i);
+            //Getting information for the ending number
+            System.out.println("Choose an ending number.");
+            int end = input.nextInt();
+
+            //Getting information for the gap between the starting and ending number
+            System.out.println("Choose a gap.");
+            int gap = input.nextInt();
+
+            //For every time that start is less than end, add the gap to start and print it out until the starting number is greater than or equal to the ending number
+            for(int i = start; i <= end; i += gap) {
+                System.out.println(i);
+            }
+
+            System.out.println("Enter 1 if you are finished, enter 2 restart the whileLoop");
+            int restart = input.nextInt();
+            if(restart == 1) {
+                finished = true;
+            }
         }
+
 
     }
 
     public static void whileLoop() {
-        //Implementing the number generator from the library that was imported
-        Random rand = new Random();
 
-        //Generating a number from 0-9
-        int realNum = rand.nextInt(10);
+        boolean finished = false;
 
-        //Making the number outside those bounds by default, so it doesn't solve without the user typing anything
-        int guessedNum = 11;
+        while (!finished) {
+            //Implementing the number generator from the library that was imported
+            Random rand = new Random();
 
-        System.out.println("Guess the number! Find the number between 0-9");
+            //Generating a number from 0-9
+            int realNum = rand.nextInt(10);
 
-        //While the guessed number isn't equal to the number randomly generated, keep asking the user to put in another prompt
-        while(guessedNum != realNum) {
-            guessedNum = input.nextInt();
+            //Making the number outside those bounds by default, so it doesn't solve without the user typing anything
+            int guessedNum = 11;
 
-            //If the number you guessed mod 2 is equal to 0 AND the randomly generated number mod 2 is also equal to 0, print a message saying that both numbers are even
-            if(guessedNum % 2 == 0) {
-                if(realNum % 2 == 0) {
-                    System.out.println("Both the number you guessed and the randomly generated number are even");
+            System.out.println("Guess the number! Find the number between 0-9");
+
+            //While the guessed number isn't equal to the number randomly generated, keep asking the user to put in another prompt
+            while(guessedNum != realNum) {
+                guessedNum = input.nextInt();
+
+                //If the number you guessed mod 2 is equal to 0 AND the randomly generated number mod 2 is also equal to 0, print a message saying that both numbers are even
+                if(guessedNum % 2 == 0) {
+                    if(realNum % 2 == 0) {
+                        System.out.println("Both the number you guessed and the randomly generated number are even");
+                    }
+                }
+
+                //If the number you guessed mod 2 is equal to 1 AND the randomly generated number mod 2 is also equal to 1, print a message saying that both numbers are odd
+                if(guessedNum % 2 == 1) {
+                    if(realNum % 2 == 1) {
+                        System.out.println("Both the number you guessed and the randomly generated number are odd");
+                    }
+                }
+
+                //If the guessed number is equal to the generated number, break out of the while loop;
+                if (guessedNum == realNum) {
+                    break;
                 }
             }
 
-            //If the number you guessed mod 2 is equal to 1 AND the randomly generated number mod 2 is also equal to 1, print a message saying that both numbers are odd
-            if(guessedNum % 2 == 1) {
-                if(realNum % 2 == 1) {
-                    System.out.println("Both the number you guessed and the randomly generated number are odd");
-                }
-            }
-
-            //If the guessed number is equal to the generated number, break out of the while loop;
+            //If the guessed number is equal to the generated number, print a message saying the guessed number was correct
             if (guessedNum == realNum) {
-                break;
+                System.out.println("You have guessed the correct number! The number was: " + realNum);
+            }
+
+            System.out.println("Enter 1 if you are finished, enter 2 restart the whileLoop");
+            int restart = input.nextInt();
+            if(restart == 1) {
+                finished = true;
             }
         }
 
-        //If the guessed number is equal to the generated number, print a message saying the guessed number was correct
-        if (guessedNum == realNum) {
-            System.out.println("You have guessed the correct number! The number was: " + realNum);
-        }
+
     }
 
     public static void taxCalculator() {
 
-        //Give the user the choice of which type of calculator they want to do
-        System.out.println("Enter 1 to calculate tax. Enter 2 to see how many of an item you can buy.");
-        int num2 = input.nextInt();
+        boolean finished = false;
 
-        //Creating a switch case to see which of the 2 scenarios is wanted
-        switch(num2) {
-            case 1: {
-                System.out.println("Enter the price of the item.");
+        while(!finished) {
+            //Give the user the choice of which type of calculator they want to do
+            System.out.println("Enter 1 to calculate tax. Enter 2 to see how many of an item you can buy.");
+            int num2 = input.nextInt();
 
-                //Get the price of the item from the user
-                double itemCost = input.nextDouble();
+            //Creating a switch case to see which of the 2 scenarios is wanted
+            switch(num2) {
+                case 1: {
+                    System.out.println("Enter the price of the item.");
 
-                //Multiply the price of the item by the tax rate in British Columbia, which is currently 12%
-                double afterTax = itemCost * 1.12;
+                    //Get the price of the item from the user
+                    double itemCost = input.nextDouble();
 
-                //Print out the price of the item after tax
-                System.out.println("The cost of your item after tax is: $" + afterTax);
-            }
+                    //Multiply the price of the item by the tax rate in British Columbia, which is currently 12%
+                    double afterTax = itemCost * 1.12;
 
-            case 2:   {
-
-                //Get the amount of money that the user has
-                System.out.println("Enter how much money you have.");
-                double money = input.nextDouble();
-
-                //Get the cost of the item the user has
-                System.out.println("Enter the cost of your item.");
-                double itemCost = input.nextDouble();
-
-                //Divide the amount of money by the cost of the item to get the double of how many of that item you can get
-                double numberBuyable = (money / itemCost);
-
-                //Print the int of how many of that item you can have, because you can't have a piece of an item and only a whole item
-                System.out.println("You are able to buy: " + (int)(numberBuyable) + " of that item.");
-            }
-
-            default: {
-
-                //If the number is greater than or equal to 3 OR the number is less than or equal to 0, print that the input was invalid and exit
-                if (num2 >= 3 || num2 <= 0) {
-                    System.out.println("Invalid input.");
-                    System.exit(0);
+                    //Print out the price of the item after tax
+                    System.out.println("The cost of your item after tax is: $" + afterTax);
                 }
-            }
 
+                case 2:   {
+
+                    //Get the amount of money that the user has
+                    System.out.println("Enter how much money you have.");
+                    double money = input.nextDouble();
+
+                    //Get the cost of the item the user has
+                    System.out.println("Enter the cost of your item.");
+                    double itemCost = input.nextDouble();
+
+                    //Divide the amount of money by the cost of the item to get the double of how many of that item you can get
+                    double numberBuyable = (money / itemCost);
+
+                    //Print the int of how many of that item you can have, because you can't have a piece of an item and only a whole item
+                    System.out.println("You are able to buy: " + (int)(numberBuyable) + " of that item.");
+                }
+
+                default: {
+
+                    //If the number is greater than or equal to 3 OR the number is less than or equal to 0, print that the input was invalid and exit
+                    if (num2 >= 3 || num2 <= 0) {
+                        System.out.println("Invalid input.");
+                        System.exit(0);
+                    }
+                }
+
+            }
+            System.out.println("Enter 1 if you are finished, enter 2 restart the taxCalculator");
+            int restart = input.nextInt();
+            if(restart == 1) {
+                finished = true;
+            }
         }
+
 
     }
 
     public static void arrayOrLists() {
+        boolean finished = false;
 
-        System.out.println("Enter how many integers you want the array to have");
+        while(!finished) {
 
-        //Asking the user for how many integers they want the array to have
-        int maxNum = input.nextInt();
+            System.out.println("Enter how many integers you want the array to have");
 
-        //Creating the array using the integer given before
-        int[] nums = new int[maxNum];
+            //Asking the user for how many integers they want the array to have
+            int maxNum = input.nextInt();
 
-        //For i is equal to zero and i is less than the max number of the array, add i by one and for each integer in the array, get the user to assign a value to it
-        for(int i = 0; i < maxNum; i++) {
-            nums[i] = input.nextInt();
+            //Creating the array using the integer given before
+            int[] nums = new int[maxNum];
+
+            //For i is equal to zero and i is less than the max number of the array, add i by one and for each integer in the array, get the user to assign a value to it
+            for(int i = 0; i < maxNum; i++) {
+                nums[i] = input.nextInt();
+            }
+
+            //For each part of the array, get them all, sort them, then print them sorted (Looked online for the sorting function)
+            for(int i = 0; i < maxNum; i++) {
+                Arrays.sort(nums);
+                System.out.println(nums[i]);
+            }
+
+            //Initialize variables for the number of indices the array will have as well as the total of those elements in the indices combined
+            int numOfValues = nums.length;
+            int totalOfValues = 0;
+            double average;
+
+            //For statement where the total is equal to all the contents of the elements in the array added up
+            for(int i = 0; i < nums.length; i++) {
+                totalOfValues = nums[i] + totalOfValues;
+            }
+
+            //Double that creates the average of the array
+            double arrayAverage = (double)(totalOfValues) / (double)(numOfValues);
+
+            //Prints out the average of the array, the lowest value, and the highest value. This was easy since I was able to sort them
+            System.out.println("The average of the array is: " + arrayAverage);
+            System.out.println("The lowest value in the array is: " + nums[0]);
+            System.out.println("The highest value in the array is: " + nums[nums.length-1]);
+
+            System.out.println("If you are finished, press 1. If you want to restart the array, press 2");
+            int restart = input.nextInt();
+
+            if(restart == 1) {
+                finished = true;
+            }
         }
-
-        //For each part of the array, get them all, sort them, then print them sorted (Looked online for the sorting function)
-        for(int i = 0; i < maxNum; i++) {
-            Arrays.sort(nums);
-            System.out.println(nums[i]);
-        }
-
-        //Initialize variables for the number of indices the array will have as well as the total of those elements in the indices combined
-        int numOfValues = nums.length;
-        int totalOfValues = 0;
-        double average;
-
-        //For statement where the total is equal to all the contents of the elements in the array added up
-        for(int i = 0; i < nums.length; i++) {
-            totalOfValues = nums[i] + totalOfValues;
-        }
-
-        //Double that creates the average of the array
-        double arrayAverage = totalOfValues / numOfValues;
-
-        //Prints out the average of the array, the lowest value, and the highest value. This was easy since I was able to sort them
-        System.out.println("The average of the array is: " + arrayAverage);
-        System.out.println("The lowest value in the array is: " + nums[0]);
-        System.out.println("The highest value in the array is: " + nums[nums.length-1]);
     }
 
     public static void personClass() {
